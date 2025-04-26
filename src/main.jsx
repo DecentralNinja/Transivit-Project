@@ -12,7 +12,7 @@ const route = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <LandingPage />
+        element: <FindJobs />
       },
       {
         path: '/FindJobs',
