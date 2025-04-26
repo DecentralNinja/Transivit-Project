@@ -48,8 +48,9 @@ body::-webkit-scrollbar-track {
   height: 50px;
   border-radius: 8px;
   outline: none;
-  font-weight: lighter;
+  font-weight: normal;
   font-size: 16px;
+  opacity: 56%;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -80,12 +81,18 @@ body::-webkit-scrollbar-track {
     display: none;
   }
   .Card {
-    width: 300px;
+    width: 250px;
+  }
+  .profileBAR {
+    display: inline;
   }
 }
 
 /* Wide Screen */
 @include mixin.breakpoint(wideScreen) {
+  .Card {
+    width: 250px;
+  }
   .profilePhoto {
     top: 30px;
     left: 20px;

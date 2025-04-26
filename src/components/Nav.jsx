@@ -51,7 +51,7 @@ const Nav = () => {
           <Btn title="Resume Builder" className="text-[16px] navBtn" />
         </div>
         <div
-          className="cursor-pointer xl:hidden"
+          className="cursor-pointer hidden profileBAR"
           onClick={() => useProfileBar(!profileBar)}
         >
           <img src="/Assets/profilePic1.svg" alt="Profile" />

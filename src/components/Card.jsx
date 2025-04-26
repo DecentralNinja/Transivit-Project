@@ -4,7 +4,7 @@ import Btn from "./Btn";
 const Card = ({ ispromoted = false }) => {
   return (
     <>
-      <div className="border-[2px] bg-white border-[#E1E1E1] rounded-[10px] w-[250px] py-3 pt-2 px-4 Card ">
+      <div className="border-[2px] bg-white border-[#E1E1E1] rounded-[10px] py-3 pt-2 px-4 Card ">
         <div>
           {ispromoted ? (
             <h6 className="text-left text-[14px] font-semibold">Promoted</h6>
