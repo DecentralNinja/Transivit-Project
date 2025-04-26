@@ -1,0 +1,245 @@
+@use "./globalStyling/variables" as vars;
+@use "./globalStyling/mixin";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base Styles */
+html,
+body {
+  overflow-x: hidden;
+}
+
+p {
+  color: #333333;
+}
+
+/* Scrollbar Styling */
+body::-webkit-scrollbar {
+  width: 5px;
+  height: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+  padding-left: 10px;
+  border-radius: 10px;
+  border: 2px solid #191919;
+}
+
+body::-webkit-scrollbar-track {
+  padding-left: 10px;
+  border-radius: 10px;
+}
+
+/* Select Field Styling */
+.selectField {
+  padding: 0px 10px;
+  background: transparent;
+  border: 1px solid #ffffff3b;
+  border-style: solid;
+  height: 50px;
+  border-radius: 8px;
+  outline: none;
+  font-weight: lighter;
+  font-size: 16px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.selectField option {
+  color: rgba(0, 0, 0, 0.8);
+  background-color: white;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.selectField option:hover {
+  color: #0154aa;
+  background: #0154AA;
+}
+
+/* --- Media Queries with Mixins --- */
+
+/* Large Screens */
+@include mixin.breakpoint(large) {
+  .navSection {
+    padding: 12px 25px;
+  }
+  .hide-search,
+  .navBtn,
+  .Navlinks {
+    display: none;
+  }
+  .Card {
+    width: 300px;
+  }
+}
+
+/* Wide Screen */
+@include mixin.breakpoint(wideScreen) {
+  .profilePhoto {
+    top: 30px;
+    left: 20px;
+    width: 70px;
+  }
+  .profileData {
+    align-items: flex-start;
+    padding: 0px 10px;
+    margin-top: 30px;
+  }
+  .profileData p {
+    text-align: start;
+    width: fit-content;
+    font-size: 12px;
+  }
+}
+
+/* Medium Screens */
+@include mixin.breakpoint(medium) {
+  .similarBtns {
+    padding: 4px 12px;
+    font-size: 12px;
+    margin-left: 12px;
+  }
+}
+
+/* Tablets */
+@include mixin.breakpoint(tablets) {
+  .seemore {
+    display: flex;
+  }
+  .profileData p {
+    font-size: 14px;
+  }
+  .forNavList {
+    width: 100%;
+    gap: 15px;
+    padding-left: 20px;
+  }
+  .forNavListContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .profilebar1 {
+    display: flex;
+  }
+  .profilePhoto {
+    top: 50px;
+    left: 10px;
+    width: 60px;
+  }
+  .Profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .profileBox1,
+  .profileBox2,
+  .profileBox3 {
+    display: none;
+  }
+  .profileData {
+    width: 100%;
+  }
+  .mainSection {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+  }
+  .profileBg {
+    width: 500px;
+  }
+  .navTitle {
+    display: none;
+  }
+  .nMain {
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 100%;
+    height: calc(100vh - 25px);
+  }
+
+  .nMain::-webkit-scrollbar {
+    width: 0px;
+    height: 8px;
+  }
+
+  .nMain::-webkit-scrollbar-thumb {
+    background-color: #191919;
+    border-radius: 10px;
+  }
+
+  .nMain::-webkit-scrollbar-track {
+    background-color: #f4f4f4;
+    border-radius: 10px;
+  }
+
+  .mainPageContainer {
+    margin-left: 0;
+    padding: 0px 10px;
+  }
+  .mainTitle {
+    font-size: 30px;
+  }
+  .smallInput {
+    width: 470px;
+  }
+}
+
+/* Small Screens */
+@include mixin.breakpoint(small) {
+  .SearchFields {
+    flex-direction: column;
+    height: fit-content;
+    row-gap: 20px;
+  }
+  .smallInput {
+    padding-left: 0;
+  }
+  .smallSelect {
+    margin-left: 0;
+    padding-left: 0;
+    border: none;
+    width: 100%;
+  }
+  .searchBtn {
+    padding: 12px;
+    font-size: 18px;
+    width: 100%;
+    margin-left: 0;
+  }
+  .mainPageContainer {
+    margin-top: 14px;
+  }
+  .mainTitle {
+    font-size: 27px;
+  }
+}
+
+/* Narrow Screens */
+@include mixin.breakpoint(narrow) {
+  .profilePhoto {
+    top: 20vw;
+    left: 10px;
+    width: 70px;
+  }
+  .scrollNav {
+    width: 100vw;
+  }
+  .Card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+}
